@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing the DOM</title>
+</head>
+
+<body>
+    <p>Find all HTML elements with class="red", in any HTML document - recursive soluttion</p>
+    <hr>
+    <ul>
+        <li>Item</li>
+        <li>Item</li>
+        <li class="red">Make me red</li>
+        <li>Item
+            <ul>
+                <li class="red">Make me red, too</li>
+            </ul>
+        </li>
+        <li>Item</li>
+    </ul>
+
+    <script>
+        let nodes = document.body.childNodes
+        console.dir(nodes);
+
+        function traverse(nodesArr) {
+            if (nodesArr.length != 0) {
+                for (let i = 0; i < nodesArr.length; i++) {
+                    const element = nodesArr[i];
+                    if (element.className == 'red') {
+                        element.style.color = 'red';
+                    };
+                    let child = element.childNodes;
+                    traverse(child);
+                };
+            };
+        };
+        traverse(nodes);
+        //successful
+
+    </script>
+
+</body>
+
+</html>
