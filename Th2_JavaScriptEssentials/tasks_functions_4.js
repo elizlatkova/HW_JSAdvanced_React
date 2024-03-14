@@ -1,33 +1,30 @@
 // ---------------------------------- Task 4 ---------------------------------- //
 /* DESCRIPTION:
-   Implement a function named 'memoize' that takes a function with a single
-   argument as input and returns a memoized version of that function.
-   The memoized function should internally maintain a cache, typically an object,
-   to store the results of previous function calls mapped to their input arguments.
-   When invoked with a new argument, the memoized function first checks if the result
-   for that argument exists in the cache. If found, it returns the cached result
-   without invoking the original function. If not found, the original function is called
-   with the argument, and its result is stored in the cache before being returned.
-   To implement memoization, the memoized function can use closure to create and update
-   the cache, ensuring its persistence between function calls. The argument passed
-   to the memoized function serves as the key for accessing and storing values in the cache.
-   This optimization technique enhances the performance of functions with deterministic behavior
-   and is particularly useful for scenarios where the same function is repeatedly called
-   with identical arguments, such as recursive algorithms or dynamic programming solutions.
+Write a function named `customMap` that mimics the behavior of the JavaScript
+array method `Array.prototype.map`. Your `customMap` function should take two
+arguments: an array and a callback function that applies a specific operation
+to each element in the array (like square, i.e. takes `x` and returns `x` * `x`).
+The customMap function should return a new array with the
+results of calling the callback function on every element in the input array.
 */
 
-
 // YOUR CODE HERE
-
-
-// TEST
-function fibonacci(n) {
-    if (n <= 1) {
-        return n;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
+// Define customMap function
+function customMap(arr, callbackFunc) {
+    let newArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        newArray[i] = callbackFunc(element);
+    };
+    return newArray
 }
 
-const memoizedFibonacci = memoize(fibonacci);
-console.log(memoizedFibonacci(10)); // Expected output: 55
-console.log(memoizedFibonacci(10)); // Expected output: 55 (calculated efficiently with memoization)
+// Define square function
+function square(number) {
+    return number * number
+}
+
+// TEST
+const nums = [1, 2, 3, 4];
+const squared = customMap(nums, square);
+console.log(squared);  // Expected output: [1, 4, 9, 16]
