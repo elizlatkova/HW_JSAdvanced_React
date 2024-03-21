@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function catConstructor(name, breed, color){
+            this.name = name;
+            this.breed = breed,
+            this.color = color,
+            this.greeting = function () {
+                console.log(`Hello, said ${this.name} the ${this.breed}.`);
+            }
+        }
+        const cat = new catConstructor('Bertie','Cymric','white');
+        const cat2 = new catConstructor('Moly','Siam','grey');
+        console.log(cat);
+        console.log(cat2);
+
+        // Put your code here
+        cat.greeting();
+        cat2.greeting();
+
+    </script>
+
+</body>
+
+</html>

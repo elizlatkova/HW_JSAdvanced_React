@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let bandInfo;
+        const myBand = {
+            name: 'MyBand',
+            nationality: 'France',
+            genre: 'pop',
+            members: 5,
+            formed: 2020,
+            split: false,
+            albums: [
+                {
+                    name: 'The unstoppable',
+                    releaed: 2020
+                },
+                {
+                    name: 'Happy',
+                    releaed: 2021
+                },
+                {
+                    name: 'Love life',
+                    releaed: 2022
+                },
+                {
+                    name: 'Make the first step',
+                    releaed: 2023
+                }
+            ]
+        };
+
+        // Put your code here
+        bandInfo = `My favorite band is ${myBand.name}. They are from ${myBand.nationality} and they create ${myBand.genre} music. ${myBand.name} formed in ${myBand.formed}. Their first album "${myBand.albums[0].name}" released in ${myBand.albums[0].releaed}.`;
+
+        let section = document.body;
+
+        // Don't edit the code below here
+
+        let para1 = document.createElement('p');
+        para1.textContent = bandInfo;
+        section.appendChild(para1);
+
+    </script>
+
+</body>
+
+</html>
