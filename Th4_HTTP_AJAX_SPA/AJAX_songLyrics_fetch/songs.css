@@ -1,0 +1,29 @@
+html, body, div, img{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: lightslategray;
+}
+.covers{
+    background-color: rgb(8, 8, 46);
+    text-align: center;
+}
+img{
+    height: 100px;
+    width: 100px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+img:hover{
+    height: 94px;
+    width: 94px;
+    border: 3px solid rgb(10, 10, 10);
+}
+
+.lyrics{
+    text-align: center;
+    padding-top: 2em;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
